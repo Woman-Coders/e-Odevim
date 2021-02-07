@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "58766316816",
+    "project_id": "womancoders",
+    "storage_bucket": "womancoders.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:58766316816:android:b40af31629dc3ad5014195",
+        "android_client_info": {
+          "package_name": "com.example.ogr_takip"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "58766316816-jlcumc42clsfptl8v8tla3pcofue3n82.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_BbAuptuflvQ_jrGcmfXHnzb7Z2BqDb4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "58766316816-jlcumc42clsfptl8v8tla3pcofue3n82.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
