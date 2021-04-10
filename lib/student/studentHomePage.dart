@@ -28,7 +28,7 @@ class _StudentHomePageState extends State<StudentHomePage> {
             TabItem(icon: Icons.add, title: 'Ödevi Yükle'),
             TabItem(icon: Icons.settings, title: 'Ayarlar'),
           ],
-          initialActiveIndex: 2,
+          initialActiveIndex: 1,
           onTap: (int i) => Navigator.push(context,
               MaterialPageRoute(builder: (context) => HomeworkAddPage())),
         ),

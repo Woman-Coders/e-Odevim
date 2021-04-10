@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">58766316816-jlcumc42clsfptl8v8tla3pcofue3n82.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">58766316816</string>
+    <string name="google_api_key" translatable="false">AIzaSyD_BbAuptuflvQ_jrGcmfXHnzb7Z2BqDb4</string>
+    <string name="google_app_id" translatable="false">1:58766316816:android:b40af31629dc3ad5014195</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyD_BbAuptuflvQ_jrGcmfXHnzb7Z2BqDb4</string>
+    <string name="google_storage_bucket" translatable="false">womancoders.appspot.com</string>
+    <string name="project_id" translatable="false">womancoders</string>
+</resources>
