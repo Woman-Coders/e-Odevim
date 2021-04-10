@@ -15,6 +15,7 @@ class _RegisterPageState extends State<RegisterPage> {
   final isimController = TextEditingController();
   final parolaTekrarController = TextEditingController();
   bool hidePass = true;
+    String forgotPassword = 'Üye Değil Misiniz? Hemen Kayıt Olun...';
 
   @override
   Widget build(BuildContext context) {
