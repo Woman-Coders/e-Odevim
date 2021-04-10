@@ -184,47 +184,7 @@ class _HomeworkAddPageState extends State<HomeworkAddPage> {
                             child: Text('Ödevi Gönder'),
                             textColor: Colors.white,
                             color: Colors.indigo,
-                            onPressed: () {
-                              var veriEkle = <String, dynamic>{};
-                              veriEkle['odevDetayi'] = _detailConroller.text;
-                              veriEkle['teslimTarihi'] =
-                                  _selectedDateTime.toString();
-                              veriEkle['sinif'] = _dropdownValue;
-                              veriEkle['ders'] = _dropdownValue2;
-                              //    veriEkle['dokuman'] = newValue;
-                              debugPrint('buraya kadar sorun yok');
-
-                              if (_detailConroller.text ==
-                                  _detailConroller.text) {
-                                _firestore
-                                    .collection('odevler')
-                                    .doc()
-                                    .set(veriEkle);
-
-                                debugPrint('odev eklendi');
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            TeacherHomePage()));
-                              } else {
-                                showDialog(
-                                    context: context,
-                                    builder: (BuildContext context) {
-                                      return AlertDialog(
-                                          title: Text('ödev eklenemedi'),
-                                          content: Text(
-                                              'bir sorun oluştu tekrar dene'),
-                                          actions: <Widget>[
-                                            FlatButton(
-                                                child: Text('Kapat'),
-                                                onPressed: () {
-                                                  Navigator.of(context).pop();
-                                                })
-                                          ]);
-                                    });
-                              }
-                            }),
+                            onPressed: () {}),
                       ],
                     ),
                   ),
@@ -233,5 +193,38 @@ class _HomeworkAddPageState extends State<HomeworkAddPage> {
             ),
           )
         ]));
+  }
+
+  void homeworkAdd() async {
+    var veriEkle = <String, dynamic>{};
+    veriEkle['odevDetayi'] = _detailConroller.text;
+    veriEkle['teslimTarihi'] = _selectedDateTime.toString();
+    veriEkle['sinif'] = _dropdownValue;
+    veriEkle['ders'] = _dropdownValue2;
+    //    veriEkle['dokuman'] = newValue;
+    debugPrint('buraya kadar sorun yok');
+
+    if (_detailConroller.text == _detailConroller.text) {
+      _firestore.collection('odevler').doc().set(veriEkle);
+
+      debugPrint('odev eklendi');
+      await Navigator.push(
+          context, MaterialPageRoute(builder: (context) => TeacherHomePage()));
+    } else {
+      await showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+                title: Text('ödev eklenemedi'),
+                content: Text('bir sorun oluştu tekrar dene'),
+                actions: <Widget>[
+                  FlatButton(
+                      child: Text('Kapat'),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      })
+                ]);
+          });
+    }
   }
 }
