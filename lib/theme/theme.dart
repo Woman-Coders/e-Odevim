@@ -152,7 +152,11 @@ class _LoginAndRegisterThemeState extends State<LoginAndRegisterTheme> {
                             color: Colors.blue[500],
                             child: Text('Kayıt ol'),
                             onPressed: () {
+<<<<<<< HEAD
                               
+=======
+                              //validateForm();
+>>>>>>> a5c020458f156a96ed199b7497b52ad3b52f76e2
                             },
                           ),
                         )
