@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:ogr_takip/core/firebaseOperations.dart';
 import 'package:ogr_takip/registerPage.dart';
 import 'package:ogr_takip/teacher/teacherHomePage.dart';
 
@@ -13,6 +14,8 @@ class _TeacherLoginPageState extends State<TeacherLoginPage> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final emailController = TextEditingController();
   final parolaController = TextEditingController();
+
+  FirebaseService authService = FirebaseService();
 
   @override
   void dispose() {
@@ -140,10 +143,9 @@ class _TeacherLoginPageState extends State<TeacherLoginPage> {
                                     var formState = _formKey.currentState;
 
                                     if (formState.validate()) {
-                                      _auth
-                                          .signInWithEmailAndPassword(
-                                              email: emailController.text,
-                                              password: parolaController.text)
+                                      authService
+                                          .signIn(emailController.text,
+                                              parolaController.text)
                                           .then((oturumAcildi) {
                                         debugPrint('Giriş başarılı');
 

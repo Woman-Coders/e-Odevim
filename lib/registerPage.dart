@@ -1,5 +1,5 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:ogr_takip/core/firebaseOperations.dart';
 import 'package:ogr_takip/main.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -7,15 +7,17 @@ class RegisterPage extends StatefulWidget {
   _RegisterPageState createState() => _RegisterPageState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class _RegisterPageState extends State<RegisterPage>{
+  
   final _formKey = GlobalKey<FormState>();
-  final FirebaseAuth _auth = FirebaseAuth.instance;
   final kayitEmailController = TextEditingController();
   final kayitParolaController = TextEditingController();
   final isimController = TextEditingController();
   final parolaTekrarController = TextEditingController();
+  FirebaseService authService = FirebaseService();
   bool hidePass = true;
-    String forgotPassword = 'Üye Değil Misiniz? Hemen Kayıt Olun...';
+  String dropdownValue = 'Öğrenci';
+  String forgotPassword = 'Üye Değil Misiniz? Hemen Kayıt Olun...';
 
   @override
   Widget build(BuildContext context) {
@@ -134,6 +136,43 @@ class _RegisterPageState extends State<RegisterPage> {
                           ),
                         ),
                         Padding(
+                          padding: const EdgeInsets.only(
+                              left: 30, right: 30, bottom: 20),
+                          child: Row(
+                            children: [
+                              Text('Statü Seçiniz : '),
+                              Padding(
+                                padding: EdgeInsets.only(right: 20.0),
+                              ),
+                              DropdownButton<String>(
+                                value: dropdownValue,
+                                icon: Icon(Icons.arrow_drop_down),
+                                iconSize: 24,
+                                elevation: 16,
+                                style: TextStyle(color: Colors.deepPurple),
+                                underline: Container(
+                                  height: 2,
+                                  color: Colors.blueAccent,
+                                ),
+                                onChanged: (String newValue) {
+                                  setState(() {
+                                    dropdownValue = newValue;
+                                  });
+                                },
+                                items: <String>[
+                                  'Öğrenci',
+                                  'Öğretmen'
+                                ].map<DropdownMenuItem<String>>((String value) {
+                                  return DropdownMenuItem<String>(
+                                    value: value,
+                                    child: Text(value),
+                                  );
+                                }).toList(),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
                             padding: const EdgeInsets.only(
                                 left: 30, right: 30, bottom: 20),
                             child: ListTile(
@@ -175,13 +214,12 @@ class _RegisterPageState extends State<RegisterPage> {
 
       if (kayitParolaController.text.trim() ==
           parolaTekrarController.text.trim()) {
-        var catchError = _auth
-            .createUserWithEmailAndPassword(
-                email: kayitEmailController.text,
-                password: kayitParolaController.text)
+        var catchError = authService
+            .createUser(isimController.text, kayitEmailController.text,
+                kayitParolaController.text)
             .catchError((hata) => debugPrint('HATA: ' + hata.toString()));
 
-        Navigator.push(
+        await Navigator.push(
             context, MaterialPageRoute(builder: (context) => MyApp()));
       }
     }

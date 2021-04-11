@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:ogr_takip/registerPage.dart';
 
 class FirebaseService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -23,11 +24,22 @@ class FirebaseService {
     var user = await _auth.createUserWithEmailAndPassword(
         email: email, password: password);
 
-    await _firestore.collection('users').doc(user.user.uid).set({
-      'userName': name,
-      'email': email,
-    });
-
+switch (dropdownValue) {
+      case 'Öğrenci':
+        await _firestore.collection('Öğrenciler').doc(user.user.uid).set({
+          'userName': name,
+          'email': email,
+        });
+        break;
+      case 'Öğretmen':
+        await _firestore.collection('Öğretmenler').doc(user.user.uid).set({
+          'userName': name,
+          'email': email,
+        });
+        break;
+      default:
+    }
+    
     return user.user;
   }
 }
