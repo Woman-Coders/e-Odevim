@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:ogr_takip/homeworks/homeworkDetails.dart';
 import 'package:ogr_takip/teacher/homeworkAdd.dart';
+import 'package:ogr_takip/component/component.dart';
 
 class TeacherHomePage extends StatefulWidget {
   @override
@@ -66,87 +67,33 @@ class _TeacherHomePageState extends State<TeacherHomePage> {
                             )),
                       ),
                     ),
-                    Card(
-                      elevation: 5.0,
-                      child: InkWell(
+                    CardWidget(
                         onTap: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => HomeworkDetailsPage()));
                         },
-                        child: Container(
-                            color: Colors.pink[100],
-                            height: 100,
-                            width: MediaQuery.of(context).size.width,
-                            child: Center(
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                  '6. Sınıf',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 40),
-                                ),
-                              ),
-                            )),
-                      ),
-                    ),
-                    Card(
-                      elevation: 5.0,
-                      child: InkWell(
+                        colour: Colors.pink[100],
+                        title: '6. Sınıf'),
+                    CardWidget(
                         onTap: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => HomeworkDetailsPage()));
                         },
-                        child: Container(
-                            color: Colors.blue[100],
-                            height: 100,
-                            width: MediaQuery.of(context).size.width,
-                            child: Center(
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                  '7. Sınıf',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 40),
-                                ),
-                              ),
-                            )),
-                      ),
-                    ),
-                    Card(
-                      elevation: 5.0,
-                      child: InkWell(
+                        colour: Colors.blue[100],
+                        title: '7. Sınıf'),
+                    CardWidget(
                         onTap: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => HomeworkDetailsPage()));
                         },
-                        child: Container(
-                            color: Colors.green[100],
-                            height: 100,
-                            width: MediaQuery.of(context).size.width,
-                            child: Center(
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                  '8. Sınıf',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 40),
-                                ),
-                              ),
-                            )),
-                      ),
-                    ),
+                        colour: Colors.green[100],
+                        title: '8. Sınıf'),
                   ])),
             ],
           ),
