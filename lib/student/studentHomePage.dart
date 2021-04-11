@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:ogr_takip/homeworks/homeworkDetails.dart';
 import 'package:ogr_takip/teacher/homeworkAdd.dart';
+import 'package:ogr_takip/component/component.dart';
 
 class StudentHomePage extends StatefulWidget {
   @override
@@ -40,113 +41,43 @@ class _StudentHomePageState extends State<StudentHomePage> {
                   scrollDirection: Axis.vertical,
                   child: Column(children: <Widget>[
                     Padding(padding: EdgeInsets.all(10.0)),
-                    Card(
-                      elevation: 5.0,
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => HomeworkDetailsPage()));
-                        },
-                        child: Container(
-                            color: Colors.yellow[100],
-                            height: 100,
-                            width: MediaQuery.of(context).size.width,
-                            child: Center(
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                  'Matematik',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 40),
-                                ),
-                              ),
-                            )),
-                      ),
+                    CardWidget(
+                      title: 'Matematik',
+                      colour: Colors.yellow[100],
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomeworkDetailsPage()));
+                      },
                     ),
-                    Card(
-                      elevation: 5.0,
-                      child: InkWell(
+                    CardWidget(
+                        title: 'Fen Bilgisi',
+                        colour: Colors.pink[100],
                         onTap: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => HomeworkDetailsPage()));
-                        },
-                        child: Container(
-                            color: Colors.pink[100],
-                            height: 100,
-                            width: MediaQuery.of(context).size.width,
-                            child: Center(
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                  'Fen Bilgisi',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 40),
-                                ),
-                              ),
-                            )),
-                      ),
-                    ),
-                    Card(
-                      elevation: 5.0,
-                      child: InkWell(
+                        }),
+                    CardWidget(
+                        title: 'Sosyal Bilimler',
+                        colour: Colors.blue[100],
                         onTap: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => HomeworkDetailsPage()));
-                        },
-                        child: Container(
-                            color: Colors.blue[100],
-                            height: 100,
-                            width: MediaQuery.of(context).size.width,
-                            child: Center(
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                  'Sosyal Bilimler',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 40),
-                                ),
-                              ),
-                            )),
-                      ),
-                    ),
-                    Card(
-                      elevation: 5.0,
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => HomeworkDetailsPage()));
-                        },
-                        child: Container(
-                            color: Colors.green[100],
-                            height: 100,
-                            width: MediaQuery.of(context).size.width,
-                            child: Center(
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                  'Türkçe',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 40),
-                                ),
-                              ),
-                            )),
-                      ),
+                        }),
+                    CardWidget(
+                      colour: Colors.green[100],
+                      title: 'Türkçe',
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomeworkDetailsPage()));
+                      },
                     ),
                   ])),
             ],
