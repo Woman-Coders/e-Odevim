@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
-import 'package:ogr_takip/homeworks/homeworkDetails.dart';
+import 'package:ogr_takip/homeworks/5ClassDetail.dart';
+import 'package:ogr_takip/homeworks/6ClassDetail.dart';
+import 'package:ogr_takip/homeworks/7ClassDetail.dart';
+import 'package:ogr_takip/homeworks/8ClassDetail.dart';
 import 'package:ogr_takip/teacher/homeworkAdd.dart';
 
 class TeacherHomePage extends StatefulWidget {
@@ -46,7 +49,8 @@ class _TeacherHomePageState extends State<TeacherHomePage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => HomeworkDetailsPage()));
+                                  builder: (context) =>
+                                      FiveClassDetailsPage()));
                         },
                         child: Container(
                             color: Colors.yellow[100],
@@ -73,7 +77,7 @@ class _TeacherHomePageState extends State<TeacherHomePage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => HomeworkDetailsPage()));
+                                  builder: (context) => SixClassDetailsPage()));
                         },
                         child: Container(
                             color: Colors.pink[100],
@@ -100,7 +104,8 @@ class _TeacherHomePageState extends State<TeacherHomePage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => HomeworkDetailsPage()));
+                                  builder: (context) =>
+                                      SevenClassDetailsPage()));
                         },
                         child: Container(
                             color: Colors.blue[100],
@@ -127,7 +132,8 @@ class _TeacherHomePageState extends State<TeacherHomePage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => HomeworkDetailsPage()));
+                                  builder: (context) =>
+                                      EightClassDetailsPage()));
                         },
                         child: Container(
                             color: Colors.green[100],

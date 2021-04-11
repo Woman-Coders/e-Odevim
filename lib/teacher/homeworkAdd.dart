@@ -184,7 +184,9 @@ class _HomeworkAddPageState extends State<HomeworkAddPage> {
                             child: Text('Ödevi Gönder'),
                             textColor: Colors.white,
                             color: Colors.indigo,
-                            onPressed: () {}),
+                            onPressed: () {
+                              homeworkAdd();
+                            }),
                       ],
                     ),
                   ),
@@ -205,7 +207,22 @@ class _HomeworkAddPageState extends State<HomeworkAddPage> {
     debugPrint('buraya kadar sorun yok');
 
     if (_detailConroller.text == _detailConroller.text) {
-      _firestore.collection('odevler').doc().set(veriEkle);
+      switch (_dropdownValue) {
+        case '5. Sınıf':
+          _firestore.collection('5. Sınıf Ödevleri').doc().set(veriEkle);
+          break;
+        case '6. Sınıf':
+          _firestore.collection('6. Sınıf Ödevleri').doc().set(veriEkle);
+          break;
+        case '7. Sınıf':
+          _firestore.collection('7. Sınıf Ödevleri').doc().set(veriEkle);
+          break;
+        case '8. Sınıf':
+          _firestore.collection('8. Sınıf Ödevleri').doc().set(veriEkle);
+          break;
+        default:
+      }
+      
 
       debugPrint('odev eklendi');
       await Navigator.push(

@@ -7,10 +7,7 @@ class HomeworkDetailsPage extends StatefulWidget {
 }
 
 class _HomeworkDetailsPageState extends State<HomeworkDetailsPage> {
-  /* final Query query = FirebaseFirestore.instance
-      .collection('odevler')
-      .where('sinif', isEqualTo: '5.sinif');
-*/
+
   @override
   Widget build(BuildContext context) {
     FirebaseFirestore.instance
