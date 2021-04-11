@@ -1,6 +1,7 @@
 # ogr_takip
 
 A new Flutter project.
+We wanted to contribute to the Qualified Education target, one of the 17 Sustainable Development Goals of the United Nations, with the application we have created.With this e-homework application, which is equal, safe and inclusive for everyone, increasing and improving the quality education opportunities for students, we have created a platform where students and teachers interact with one-to-one interlocutor relationship, aiming to participate effectively.In this world where everything is digitalized, we moved the homework tracking system to mobile in order to fall behind and keep up with the change. 
 
 ## Getting Started
 
